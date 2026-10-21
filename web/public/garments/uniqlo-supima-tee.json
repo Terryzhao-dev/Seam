@@ -1,0 +1,155 @@
+{
+ "id": "uniqlo-supima-tee",
+ "brand": "Uniqlo",
+ "name": "SUPIMA Cotton T-Shirt",
+ "product_id": "E455365-000",
+ "url": "https://www.uniqlo.com/us/en/products/E455365-000/00",
+ "source": "Uniqlo US size-chart API",
+ "fetched": "2026-10-19",
+ "price": 19.9,
+ "fit": "regular",
+ "fabric": "100% Supima cotton jersey, no stretch",
+ "sleeve": "short",
+ "shoulder": "set-in",
+ "measured": {
+  "length_back": "centre back of the neck to the hem",
+  "shoulder_width": "seam to seam",
+  "chest_flat": "armpit to armpit, laid flat (x 2 = girth)",
+  "sleeve_cb": "centre back of the collar to the sleeve edge"
+ },
+ "tolerance_cm": 1.0,
+ "sizes": [
+  {
+   "size": "XXS",
+   "length_back": 63.0,
+   "shoulder_width": 40.0,
+   "chest_flat": 45.5,
+   "sleeve_cb": 39.0,
+   "body": {
+    "chest": [
+     78.0,
+     84.0
+    ]
+   }
+  },
+  {
+   "size": "XS",
+   "length_back": 65.0,
+   "shoulder_width": 41.5,
+   "chest_flat": 48.5,
+   "sleeve_cb": 40.0,
+   "body": {
+    "chest": [
+     80.0,
+     88.0
+    ],
+    "waist": [
+     66.0,
+     72.0
+    ]
+   }
+  },
+  {
+   "size": "S",
+   "length_back": 68.0,
+   "shoulder_width": 43.0,
+   "chest_flat": 51.5,
+   "sleeve_cb": 42.0,
+   "body": {
+    "chest": [
+     88.0,
+     96.0
+    ],
+    "waist": [
+     68.0,
+     76.0
+    ]
+   }
+  },
+  {
+   "size": "M",
+   "length_back": 71.0,
+   "shoulder_width": 44.5,
+   "chest_flat": 54.5,
+   "sleeve_cb": 44.0,
+   "body": {
+    "chest": [
+     96.0,
+     104.0
+    ],
+    "waist": [
+     76.0,
+     84.0
+    ]
+   }
+  },
+  {
+   "size": "L",
+   "length_back": 74.0,
+   "shoulder_width": 46.5,
+   "chest_flat": 58.5,
+   "sleeve_cb": 46.0,
+   "body": {
+    "chest": [
+     104.0,
+     112.0
+    ],
+    "waist": [
+     84.0,
+     92.0
+    ]
+   }
+  },
+  {
+   "size": "XL",
+   "length_back": 76.0,
+   "shoulder_width": 48.5,
+   "chest_flat": 62.5,
+   "sleeve_cb": 47.0,
+   "body": {
+    "chest": [
+     112.0,
+     120.0
+    ],
+    "waist": [
+     92.0,
+     100.0
+    ]
+   }
+  },
+  {
+   "size": "XXL",
+   "length_back": 76.5,
+   "shoulder_width": 50.5,
+   "chest_flat": 65.5,
+   "sleeve_cb": 48.0,
+   "body": {
+    "chest": [
+     120.0,
+     128.0
+    ],
+    "waist": [
+     100.0,
+     108.0
+    ]
+   }
+  },
+  {
+   "size": "3XL",
+   "length_back": 78.5,
+   "shoulder_width": 52.5,
+   "chest_flat": 69.5,
+   "sleeve_cb": 49.5,
+   "body": {
+    "chest": [
+     128.0,
+     136.0
+    ],
+    "waist": [
+     108.0,
+     116.0
+    ]
+   }
+  }
+ ]
+}

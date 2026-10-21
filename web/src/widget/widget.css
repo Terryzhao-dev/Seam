@@ -1,0 +1,139 @@
+.seam {
+  --ink: #0b0b0c;
+  --muted: #6b6b70;
+  --faint: #a1a1a6;
+  --line: #e7e7e4;
+  --soft: #f5f5f3;
+  --white: #ffffff;
+  --good: #1e7b4c;
+  --warn: #9a5b00;
+  --radius: 18px;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family: "Figtree Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+.seam *, .seam *::before, .seam *::after { box-sizing: border-box; }
+:where(.seam) button { font: inherit; color: inherit; cursor: pointer; }
+:where(.seam) input { font: inherit; color: inherit; }
+
+.seam-overlay {
+  position: fixed; inset: 0; z-index: 2147483000;
+  display: grid; place-items: center;
+  background: rgba(15, 15, 16, 0.32);
+  backdrop-filter: blur(6px);
+}
+
+.seam-card {
+  position: relative;
+  width: min(480px, 100vw);
+  height: min(740px, calc(100dvh - 48px));
+  background: var(--white);
+  border-radius: 22px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.22);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  transition: width 0.45s var(--ease), height 0.45s var(--ease), border-radius 0.45s var(--ease);
+}
+.seam-card.full { width: 100vw; height: 100dvh; border-radius: 0; }
+@media (max-width: 560px) {
+  .seam-card { width: 100vw; height: 100dvh; border-radius: 0; }
+}
+
+.seam-head {
+  height: 60px; flex: 0 0 auto;
+  display: grid; grid-template-columns: 44px 1fr 44px; align-items: center;
+  padding: 0 10px;
+}
+.seam-icon-btn {
+  width: 40px; height: 40px; border: 0; border-radius: 999px; background: transparent;
+  display: grid; place-items: center; transition: background 0.2s;
+}
+.seam-icon-btn:hover { background: var(--soft); }
+.seam-brand { justify-self: center; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+.seam-progress { height: 2px; background: var(--line); flex: 0 0 auto; }
+.seam-progress > div { height: 100%; background: var(--ink); transition: width 0.5s var(--ease); }
+
+.seam-stage { position: relative; flex: 1 1 auto; display: grid; overflow: hidden; }
+.seam-screen {
+  grid-area: 1 / 1;
+  display: flex; flex-direction: column;
+  padding: 28px 28px 24px;
+  overflow-y: auto;
+  min-height: 0;
+}
+.seam-screen.flush { padding: 0; }
+.seam-screen > * { flex-shrink: 0; }
+.seam-screen > .seam-spacer { flex-shrink: 1; }
+
+.seam-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.seam-title { font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.025em; margin: 0 0 10px; }
+.seam-sub { font-size: 15px; line-height: 1.5; color: var(--muted); margin: 0; }
+.seam-spacer { flex: 1 1 auto; min-height: 16px; }
+
+.seam-primary {
+  width: 100%; height: 54px; border: 0; border-radius: 999px;
+  background: var(--ink); color: var(--white) !important; font-weight: 600; font-size: 16px;
+  transition: transform 0.15s var(--ease), opacity 0.2s;
+}
+.seam-primary:active { transform: scale(0.985); }
+.seam-primary:disabled { opacity: 0.25; cursor: default; }
+.seam-link {
+  display: block; margin: 14px auto 0; border: 0; background: none;
+  color: var(--muted) !important; font-size: 14px; text-decoration: underline; text-underline-offset: 3px;
+}
+
+.seam-number { display: flex; align-items: baseline; justify-content: center; gap: 10px; margin: 44px 0 12px; }
+.seam-number input {
+  width: 3.2ch; border: 0; outline: 0; background: transparent; text-align: center;
+  font-size: 64px; font-weight: 600; letter-spacing: -0.03em; padding: 0;
+  border-bottom: 1.5px solid var(--line); transition: border-color 0.2s;
+  -moz-appearance: textfield;
+}
+.seam-number input:focus { border-bottom-color: var(--ink); }
+.seam-number input::-webkit-outer-spin-button, .seam-number input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.seam-number .unit { font-size: 22px; color: var(--muted); font-weight: 500; }
+.seam-hint { text-align: center; font-size: 13px; color: var(--faint); min-height: 18px; }
+.seam-hint.err { color: #b3261e; }
+
+.seam-segment { display: inline-flex; margin: 0 auto; background: var(--soft); border-radius: 999px; padding: 3px; }
+.seam-segment button { border: 0; background: transparent; padding: 7px 16px; border-radius: 999px; font-size: 13px; font-weight: 500; color: var(--muted); transition: all 0.2s var(--ease); }
+.seam-segment button.on { background: var(--white); color: var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+.seam-options { display: grid; gap: 10px; margin-top: 24px; }
+.seam-options.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.seam-options.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.seam-options.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.seam-option {
+  min-width: 0;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--white);
+  padding: 14px 12px 12px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s var(--ease);
+}
+.seam-option:hover { border-color: #cfcfcb; transform: translateY(-1px); }
+.seam-option.on { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink) inset; }
+.seam-option .label { font-size: 14px; font-weight: 600; }
+.seam-option .desc { font-size: 12px; color: var(--muted); line-height: 1.35; }
+.seam-option svg { display: block; }
+.seam-row-option {
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--white);
+  padding: 16px 18px; display: flex; align-items: center; gap: 14px; text-align: left; width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.seam-row-option.on { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink) inset; }
+.seam-row-option .label { font-size: 15px; font-weight: 600; }
+.seam-row-option .desc { font-size: 13px; color: var(--muted); }
+
+.seam-list { list-style: none; margin: 18px 0 0; padding: 0; }
+.seam-list li { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.45; }
+.seam-list li:first-child { border-top: 0; }
+.seam-list .k { width: 92px; flex: 0 0 auto; color: var(--muted); }
+
+.seam-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: var(--soft); color: var(--muted); }
+.seam-chip.high { color: var(--good); background: #eaf5ee; }
+.seam-chip.low { color: var(--warn); background: #fbf2e4; }
+
+@media (prefers-reduced-motion: reduce) {
+  .seam-card, .seam-progress > div, .seam-option { transition: none; }
+}

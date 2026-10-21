@@ -1,0 +1,15 @@
+[
+  {
+    "id": "gildan-5000",
+    "name": "Gildan 5000 Heavy Cotton tee",
+    "source": "https://dtfdatabase.com/blog/gildan-5000-g500-heavy-cotton-style-guide/ (secondary source, inches converted to cm)",
+    "tolerance_cm": 1,
+    "sizes": [
+      { "size": "S", "chest_width_flat": 45.7, "body_length": 71.1 },
+      { "size": "M", "chest_width_flat": 50.8, "body_length": 73.7 },
+      { "size": "L", "chest_width_flat": 55.9, "body_length": 76.2 },
+      { "size": "XL", "chest_width_flat": 61.0, "body_length": 78.7 },
+      { "size": "2XL", "chest_width_flat": 66.0, "body_length": 81.3 }
+    ]
+  }
+]

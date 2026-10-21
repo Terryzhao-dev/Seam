@@ -1,0 +1,12 @@
+node_modules/
+model/.venv/
+data/
+dist/
+__pycache__/
+smoke-shots/
+*.png
+!docs/images/*.png
+.DS_Store
+
+# Business plan and personal notes (kept local)
+PLAN.md

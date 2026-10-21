@@ -1,0 +1,1 @@
+{ "camera": {}, "drapeK": 5, "note": "Offsets and noise per camera reading override CAMERA_LINKS in bodymodel.ts once tape data exists." }

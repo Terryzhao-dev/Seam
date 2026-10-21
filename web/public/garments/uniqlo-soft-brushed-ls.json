@@ -1,0 +1,155 @@
+{
+ "id": "uniqlo-soft-brushed-ls",
+ "brand": "Uniqlo",
+ "name": "Soft Brushed T-Shirt | Long Sleeve",
+ "product_id": "E450179-000",
+ "url": "https://www.uniqlo.com/us/en/products/E450179-000/00",
+ "source": "Uniqlo US size-chart API",
+ "fetched": "2026-10-19",
+ "price": 24.9,
+ "fit": "regular",
+ "fabric": "100% cotton, brushed inside, ribbed cuffs, no stretch",
+ "sleeve": "long",
+ "shoulder": "set-in",
+ "measured": {
+  "length_back": "centre back of the neck to the hem",
+  "shoulder_width": "seam to seam",
+  "chest_flat": "armpit to armpit, laid flat (x 2 = girth)",
+  "sleeve_cb": "centre back of the collar to the sleeve edge"
+ },
+ "tolerance_cm": 1.0,
+ "sizes": [
+  {
+   "size": "XXS",
+   "length_back": 64.0,
+   "shoulder_width": 39.5,
+   "chest_flat": 47.0,
+   "sleeve_cb": 79.0,
+   "body": {
+    "chest": [
+     78.0,
+     84.0
+    ]
+   }
+  },
+  {
+   "size": "XS",
+   "length_back": 66.0,
+   "shoulder_width": 41.0,
+   "chest_flat": 50.0,
+   "sleeve_cb": 80.5,
+   "body": {
+    "chest": [
+     80.0,
+     88.0
+    ],
+    "waist": [
+     66.0,
+     72.0
+    ]
+   }
+  },
+  {
+   "size": "S",
+   "length_back": 69.0,
+   "shoulder_width": 42.5,
+   "chest_flat": 53.0,
+   "sleeve_cb": 83.0,
+   "body": {
+    "chest": [
+     88.0,
+     96.0
+    ],
+    "waist": [
+     68.0,
+     76.0
+    ]
+   }
+  },
+  {
+   "size": "M",
+   "length_back": 72.0,
+   "shoulder_width": 44.0,
+   "chest_flat": 56.0,
+   "sleeve_cb": 85.5,
+   "body": {
+    "chest": [
+     96.0,
+     104.0
+    ],
+    "waist": [
+     76.0,
+     84.0
+    ]
+   }
+  },
+  {
+   "size": "L",
+   "length_back": 75.0,
+   "shoulder_width": 46.0,
+   "chest_flat": 60.0,
+   "sleeve_cb": 88.0,
+   "body": {
+    "chest": [
+     104.0,
+     112.0
+    ],
+    "waist": [
+     84.0,
+     92.0
+    ]
+   }
+  },
+  {
+   "size": "XL",
+   "length_back": 77.0,
+   "shoulder_width": 48.0,
+   "chest_flat": 64.0,
+   "sleeve_cb": 89.0,
+   "body": {
+    "chest": [
+     112.0,
+     120.0
+    ],
+    "waist": [
+     92.0,
+     100.0
+    ]
+   }
+  },
+  {
+   "size": "XXL",
+   "length_back": 77.5,
+   "shoulder_width": 50.0,
+   "chest_flat": 67.0,
+   "sleeve_cb": 90.0,
+   "body": {
+    "chest": [
+     120.0,
+     128.0
+    ],
+    "waist": [
+     100.0,
+     108.0
+    ]
+   }
+  },
+  {
+   "size": "3XL",
+   "length_back": 79.5,
+   "shoulder_width": 52.0,
+   "chest_flat": 71.0,
+   "sleeve_cb": 91.0,
+   "body": {
+    "chest": [
+     128.0,
+     136.0
+    ],
+    "waist": [
+     108.0,
+     116.0
+    ]
+   }
+  }
+ ]
+}

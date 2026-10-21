@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seam Scan v0</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Seam Scan <span>v0 · local test</span></h1>
+    <p class="privacy">Video stays in this browser and nothing is uploaded. Sessions are saved in this browser only; export them to keep them. (The MediaPipe library sends anonymous usage pings to Google, no images.)</p>
+  </header>
+
+  <main>
+    <section id="setup" class="card">
+      <h2>1. About you</h2>
+      <div class="grid">
+        <label>Height, barefoot (cm)<input id="height" type="number" step="0.1" min="140" max="215" inputmode="decimal"></label>
+        <label>Weight (kg)<input id="weight" type="number" step="0.1" min="40" max="200" inputmode="decimal"></label>
+        <label>Age (optional)<input id="age" type="number" min="15" max="90" inputmode="numeric"></label>
+        <label>Fit you like
+          <select id="style">
+            <option value="slim">Slim</option>
+            <option value="regular" selected>Regular</option>
+            <option value="relaxed">Relaxed</option>
+          </select>
+        </label>
+      </div>
+
+      <h3>Before you scan</h3>
+      <ul class="tips">
+        <li><b>Clothes:</b> one T-shirt (fitted is better), no hoodie or jacket. Barefoot. Hair off your shoulders. Empty pockets.</li>
+        <li><b>Device:</b> upright on a shelf or table at about waist height, screen not tilted back. Stand 2 to 3 m away. Good light, plain background, nobody else in view.</li>
+        <li><b>Front pose:</b> face the camera, arms straight about 30 to 45° out from your body, feet hip-width apart, breathe normally.</li>
+        <li><b>Side pose:</b> turn to your left so your side faces the camera, arms straight down, hands by your thighs, feet together.</li>
+        <li>The scan captures by itself once the pose is right, and tells you what to fix.</li>
+      </ul>
+
+      <details>
+        <summary>Settings</summary>
+        <div class="grid">
+          <label>Pose model
+            <select id="model">
+              <option value="lite">Lite (fastest)</option>
+              <option value="full" selected>Full (default)</option>
+              <option value="heavy">Heavy (laptops only, slowest)</option>
+            </select>
+          </label>
+          <label class="check"><input id="voice" type="checkbox" checked> Spoken instructions</label>
+        </div>
+      </details>
+
+      <div class="actions"><button id="start" class="primary">Start camera scan</button></div>
+
+      <details>
+        <summary>Or measure two photos instead</summary>
+        <p class="small">Take them with your phone from 2 to 3 m away at waist height, whole body in frame, in the two poses above. AirDrop them to this computer.</p>
+        <div class="grid">
+          <label>Front photo<input id="photoFront" type="file" accept="image/*"></label>
+          <label>Side photo<input id="photoSide" type="file" accept="image/*"></label>
+        </div>
+        <div class="actions"><button id="photos">Measure photos</button></div>
+      </details>
+      <p id="setupMsg" class="msg"></p>
+    </section>
+
+    <section id="scan" class="card hidden">
+      <h2>2. Scan</h2>
+      <div id="phase" class="phase"></div>
+      <div class="stage">
+        <video id="video" playsinline muted></video>
+        <canvas id="canvas"></canvas>
+        <div id="status" class="status"></div>
+      </div>
+      <div class="progress"><div id="bar"></div></div>
+      <ul id="checks" class="checks"></ul>
+      <p class="small legend">Lines while capturing: <span class="l-neck">neck base</span> <span class="l-armpit">armpit</span> <span class="l-chest">chest</span> <span class="l-waist">waist</span> <span class="l-hip">hip</span> <span class="l-crotch">crotch</span></p>
+      <div class="actions"><button id="cancel">Cancel</button></div>
+    </section>
+
+    <section id="results" class="card hidden">
+      <h2>3. Result</h2>
+      <div class="rec">
+        <div>
+          <div id="size" class="size"></div>
+          <div id="between" class="between"></div>
+        </div>
+        <ul id="notes" class="notes"></ul>
+      </div>
+      <div class="grid">
+        <label>Size chart<select id="chart"></select></label>
+      </div>
+      <details>
+        <summary>Add your own tee (garment measurements)</summary>
+        <p class="small">One size per line: size, chest width measured flat (cm), body length from the shoulder (cm), shoulder width (cm, optional).</p>
+        <textarea id="customChart" rows="6" placeholder="S, 48, 70&#10;M, 51, 72&#10;L, 54, 74"></textarea>
+        <div class="actions"><button id="saveChart">Save as "My tee"</button></div>
+      </details>
+      <table id="sizeTable" class="table"></table>
+
+      <h3>Body estimates</h3>
+      <div id="quality" class="quality"></div>
+      <table id="estimates" class="table"></table>
+      <p class="small">Camera = scan alone (uncalibrated until tape data exists). Height/weight = what 4,082 measured men of your height and weight looked like. Combined = both, weighted by how reliable each is. ± is one standard error.</p>
+      <div id="silhouettes" class="silhouettes"></div>
+      <div class="actions"><button id="again">Scan again</button></div>
+    </section>
+
+    <section id="tape" class="card hidden">
+      <h2>4. Check against a tape measure</h2>
+      <p class="small">Fill in what you can; blanks are skipped. Your numbers are remembered for the next scan, so repeat scans compare automatically. Measure twice and use the average.</p>
+      <div id="tapeForm" class="tape"></div>
+      <div class="actions"><button id="compare" class="primary">Compare</button></div>
+      <div id="heightNote" class="msg"></div>
+      <table id="comparison" class="table"></table>
+    </section>
+
+    <section id="sessions" class="card">
+      <h2>Saved sessions</h2>
+      <div class="actions">
+        <button id="exportJson">Export JSON</button>
+        <button id="exportCsv">Export CSV</button>
+        <button id="clear">Clear all</button>
+      </div>
+      <table id="sessionTable" class="table"></table>
+      <h3>Repeatability (camera values across your sessions)</h3>
+      <table id="repeat" class="table"></table>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

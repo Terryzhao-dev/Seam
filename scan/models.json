@@ -1,0 +1,598 @@
+{
+ "built": "2026-10-19",
+ "source": "ANSUR II male public data, n = 4077; self-reported height and weight; 10-fold CV errors",
+ "units": "cm, kg, years",
+ "prior": {
+  "hw": {
+   "chest_girth": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 29.10148,
+    "coef": [
+     0.125529,
+     0.224809,
+     1.309181
+    ],
+    "rmse": 3.81,
+    "mae": 2.9
+   },
+   "waist_girth": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 22.54601,
+    "coef": [
+     0.011244,
+     0.367721,
+     1.416041
+    ],
+    "rmse": 5.12,
+    "mae": 3.97
+   },
+   "hip_girth": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 25.39209,
+    "coef": [
+     0.166052,
+     0.223765,
+     1.037178
+    ],
+    "rmse": 3.15,
+    "mae": 2.41
+   },
+   "outer_shoulder": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 13.97611,
+    "coef": [
+     0.102384,
+     0.052627,
+     0.533308
+    ],
+    "rmse": 1.64,
+    "mae": 1.26
+   },
+   "bony_shoulder": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 9.16218,
+    "coef": [
+     0.151638,
+     -0.011368,
+     0.237758
+    ],
+    "rmse": 1.45,
+    "mae": 1.14
+   },
+   "chest_width": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 6.53964,
+    "coef": [
+     0.080982,
+     0.009548,
+     0.266811
+    ],
+    "rmse": 1.32,
+    "mae": 1.04
+   },
+   "chest_depth": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 9.41587,
+    "coef": [
+     0.002159,
+     0.093596,
+     0.282147
+    ],
+    "rmse": 1.36,
+    "mae": 1.06
+   },
+   "waist_width": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 5.14854,
+    "coef": [
+     0.038447,
+     0.096891,
+     0.460042
+    ],
+    "rmse": 1.77,
+    "mae": 1.37
+   },
+   "waist_depth": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 3.92896,
+    "coef": [
+     -0.005757,
+     0.099555,
+     0.459572
+    ],
+    "rmse": 1.83,
+    "mae": 1.43
+   },
+   "hip_width": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 6.15624,
+    "coef": [
+     0.087089,
+     0.046416,
+     0.332958
+    ],
+    "rmse": 1.36,
+    "mae": 1.05
+   },
+   "hip_depth": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 11.58743,
+    "coef": [
+     -0.018303,
+     0.110949,
+     0.252013
+    ],
+    "rmse": 1.26,
+    "mae": 0.98
+   },
+   "upper_arm": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 3.04107,
+    "coef": [
+     0.184235,
+     0.010825,
+     -0.013413
+    ],
+    "rmse": 1.12,
+    "mae": 0.89
+   },
+   "arm_length": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 1.76005,
+    "coef": [
+     0.319361,
+     0.00803,
+     0.002448
+    ],
+    "rmse": 1.93,
+    "mae": 1.51
+   },
+   "inseam": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": -7.43066,
+    "coef": [
+     0.527564,
+     -0.005928,
+     -0.048402
+    ],
+    "rmse": 2.58,
+    "mae": 1.98
+   },
+   "torso_length": {
+    "features": [
+     "h",
+     "w",
+     "bmi"
+    ],
+    "intercept": 13.34527,
+    "coef": [
+     0.26538,
+     0.026545,
+     0.160632
+    ],
+    "rmse": 2.24,
+    "mae": 1.75
+   }
+  },
+  "hwa": {
+   "chest_girth": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 30.20916,
+    "coef": [
+     0.110619,
+     0.242748,
+     1.174701,
+     0.120615
+    ],
+    "rmse": 3.67,
+    "mae": 2.79
+   },
+   "waist_girth": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 24.47017,
+    "coef": [
+     -0.014656,
+     0.398882,
+     1.182435,
+     0.20952
+    ],
+    "rmse": 4.8,
+    "mae": 3.71
+   },
+   "hip_girth": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 25.01887,
+    "coef": [
+     0.171076,
+     0.217721,
+     1.08249,
+     -0.04064
+    ],
+    "rmse": 3.13,
+    "mae": 2.4
+   },
+   "outer_shoulder": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 14.01633,
+    "coef": [
+     0.101842,
+     0.053279,
+     0.528424,
+     0.00438
+    ],
+    "rmse": 1.64,
+    "mae": 1.26
+   },
+   "bony_shoulder": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 9.06534,
+    "coef": [
+     0.152941,
+     -0.012936,
+     0.249514,
+     -0.010544
+    ],
+    "rmse": 1.45,
+    "mae": 1.14
+   },
+   "chest_width": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 6.71804,
+    "coef": [
+     0.078581,
+     0.012437,
+     0.245152,
+     0.019426
+    ],
+    "rmse": 1.31,
+    "mae": 1.03
+   },
+   "chest_depth": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 9.77405,
+    "coef": [
+     -0.002662,
+     0.099397,
+     0.238661,
+     0.039002
+    ],
+    "rmse": 1.32,
+    "mae": 1.03
+   },
+   "waist_width": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 5.39996,
+    "coef": [
+     0.035063,
+     0.100963,
+     0.429518,
+     0.027377
+    ],
+    "rmse": 1.75,
+    "mae": 1.36
+   },
+   "waist_depth": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 4.71362,
+    "coef": [
+     -0.016319,
+     0.112263,
+     0.364309,
+     0.085441
+    ],
+    "rmse": 1.68,
+    "mae": 1.3
+   },
+   "hip_width": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 6.10441,
+    "coef": [
+     0.087786,
+     0.045576,
+     0.339251,
+     -0.005644
+    ],
+    "rmse": 1.36,
+    "mae": 1.05
+   },
+   "hip_depth": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 11.67512,
+    "coef": [
+     -0.019484,
+     0.112369,
+     0.241367,
+     0.009549
+    ],
+    "rmse": 1.26,
+    "mae": 0.98
+   },
+   "upper_arm": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 3.15924,
+    "coef": [
+     0.182645,
+     0.012739,
+     -0.027761,
+     0.012868
+    ],
+    "rmse": 1.12,
+    "mae": 0.88
+   },
+   "arm_length": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 1.78528,
+    "coef": [
+     0.319021,
+     0.008438,
+     -0.000614,
+     0.002747
+    ],
+    "rmse": 1.93,
+    "mae": 1.51
+   },
+   "inseam": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": -7.47126,
+    "coef": [
+     0.528111,
+     -0.006586,
+     -0.043473,
+     -0.004421
+    ],
+    "rmse": 2.58,
+    "mae": 1.98
+   },
+   "torso_length": {
+    "features": [
+     "h",
+     "w",
+     "bmi",
+     "age"
+    ],
+    "intercept": 13.58152,
+    "coef": [
+     0.2622,
+     0.030371,
+     0.13195,
+     0.025724
+    ],
+    "rmse": 2.23,
+    "mae": 1.74
+   }
+  }
+ },
+ "camera": {
+  "chest_girth_wd": {
+   "features": [
+    "ellipse_chest",
+    "outer_shoulder",
+    "h",
+    "w"
+   ],
+   "intercept": 14.3715,
+   "coef": [
+    0.901114,
+    0.49127,
+    -0.127681,
+    0.142041
+   ],
+   "rmse": 2.2,
+   "mae": 1.74
+  },
+  "chest_girth_w": {
+   "features": [
+    "chest_width",
+    "outer_shoulder",
+    "h",
+    "w"
+   ],
+   "intercept": 44.24909,
+   "coef": [
+    0.722468,
+    0.936327,
+    -0.21322,
+    0.361583
+   ],
+   "rmse": 3.15,
+   "mae": 2.48
+  },
+  "waist_girth_wd": {
+   "features": [
+    "ellipse_waist",
+    "h",
+    "w"
+   ],
+   "intercept": 7.31896,
+   "coef": [
+    0.997948,
+    -0.039744,
+    0.056123
+   ],
+   "rmse": 1.53,
+   "mae": 1.21
+  },
+  "waist_girth_w": {
+   "features": [
+    "waist_width",
+    "h",
+    "w"
+   ],
+   "intercept": 26.64836,
+   "coef": [
+    2.406807,
+    -0.173561,
+    0.231082
+   ],
+   "rmse": 2.86,
+   "mae": 2.26
+  },
+  "hip_girth_wd": {
+   "features": [
+    "ellipse_hip",
+    "h",
+    "w"
+   ],
+   "intercept": 16.6721,
+   "coef": [
+    0.841439,
+    -0.014248,
+    0.106003
+   ],
+   "rmse": 1.6,
+   "mae": 1.27
+  }
+ },
+ "proportions": {
+  "crotch": {
+   "mean": 0.4815,
+   "sd": 0.0141
+  },
+  "neck": {
+   "mean": 0.8639,
+   "sd": 0.0066
+  },
+  "shoulder": {
+   "mean": 0.8203,
+   "sd": 0.0096
+  },
+  "armpit": {
+   "mean": 0.7567,
+   "sd": 0.009
+  },
+  "waist": {
+   "mean": 0.6014,
+   "sd": 0.0129
+  },
+  "chest": {
+   "mean": 0.7351,
+   "sd": 0.0105
+  }
+ }
+}

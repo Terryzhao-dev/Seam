@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>Seam demo store</title>
+</head>
+<body>
+  <header class="bar">
+    <span class="store">Demo store</span>
+    <span class="note">Seam MVP · local demo</span>
+  </header>
+
+  <main class="product">
+    <section class="gallery" aria-label="Product image">
+      <div class="photo" id="photo"></div>
+    </section>
+
+    <section class="details">
+      <nav class="tabs" id="tabs"></nav>
+      <h1 id="name"></h1>
+      <p class="price" id="price"></p>
+      <p class="meta" id="meta"></p>
+
+      <div class="size-head">
+        <button class="find" id="find" type="button">
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="currentColor" /><path d="M5.5 13.5 C8 11.5 12 8.5 14.5 6.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 2.2" fill="none" /></svg>
+          <span>Find Your Size</span>
+        </button>
+        <button class="chart" id="chartBtn" type="button">Size Chart</button>
+      </div>
+      <p class="your-size" id="yourSize" hidden></p>
+      <div class="sizes" id="sizes"></div>
+      <button class="cart" type="button" disabled>Add to cart</button>
+
+      <dialog id="chart">
+        <form method="dialog"><button class="x" aria-label="Close">×</button></form>
+        <h2>Garment measurements (cm)</h2>
+        <table id="chartTable"></table>
+        <p class="source" id="source"></p>
+      </dialog>
+
+      <p class="source">Demo product. Garment and body measurements come from Uniqlo's published size chart; this page is not affiliated with Uniqlo.</p>
+    </section>
+  </main>
+
+  <script type="module" src="/src/demo/main.ts"></script>
+</body>
+</html>
